@@ -1,0 +1,21 @@
+import java.util.*;
+class Solution {
+   
+    public int findNumbers(int[] nums) {
+        int count =0;
+        for(int num:nums){
+        if(even(num)){
+            count++;}
+        }return count;
+    }
+    boolean even(int num){
+        if(num<0) {
+        num = num* -1;
+        }
+        
+       String str = Integer.toString(num);
+        int digit = str.length();
+        return digit%2==0 ;
+        }
+    
+}
