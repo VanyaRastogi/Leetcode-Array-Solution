@@ -1,0 +1,19 @@
+class Solution {
+    public boolean checkIfPangram(String sentence) {
+        char[] arr = new char[sentence.length()];
+        int val=0;
+        String str ="";
+        for(int i =0;i<sentence.length();i++){
+            arr[i] =sentence.charAt(i);
+        } for(int i =0;i<sentence.length();i++){
+
+            if(!str.contains(Character.toString(arr[i]))){
+                str += Character.toString(arr[i]);
+            }else continue;
+           
+        } val = str.length();
+            if (val>=26)
+                return true;
+        return false;
+    }
+}
