@@ -1,0 +1,21 @@
+class Solution {
+    public List<String> fizzBuzz(int n) {
+        ArrayList<String> arr = new ArrayList<String>(n);
+        for(int i=1;i<=n;i++){
+            boolean divisibleby3 =(i % 3==0);
+             boolean divisibleby5 =(i % 5==0);   
+            
+            if(divisibleby3 && divisibleby5)  
+                arr.add("FizzBuzz");
+           
+            else if(divisibleby5) 
+                arr.add("Buzz");
+            
+            else if(divisibleby3) 
+                arr.add("Fizz");
+            
+            else 
+                arr.add(Integer.toString(i));
+        }return arr;
+    }
+}
