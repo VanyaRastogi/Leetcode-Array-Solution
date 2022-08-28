@@ -1,0 +1,18 @@
+class Solution {
+    public int singleNonDuplicate(int[] nums) {
+        int s=0 ;
+        int e=nums.length-1;
+        if(nums.length==1)return nums[s];
+        
+        while(s<=e){
+            if(nums[s]!=nums[s+1])
+                return nums[s];
+            if(nums[e]!=nums[e-1])
+                return nums[e];
+            s+=2;
+            e-=2;
+            
+        }return -1;
+            
+    }
+}
