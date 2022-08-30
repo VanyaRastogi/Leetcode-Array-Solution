@@ -1,0 +1,16 @@
+class Solution {
+    public int[] fairCandySwap(int[] A, int[] B) {
+        
+        int sa=0 , sb=0;
+        for(int i:A) sa+=i;
+        for(int i:B) sb+=i;
+        int m=(sb-sa)/2;
+        
+        Set<Integer> set = new HashSet();
+        for(int x:B) set.add(x);
+        for(int x:A) 
+            if(set.contains(x+m))
+                return new int[]{x, x + m};
+        return null;
+    }
+}
