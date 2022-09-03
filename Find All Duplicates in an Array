@@ -1,0 +1,23 @@
+class Solution {
+    public List<Integer> findDuplicates(int[] nums) {
+     int i=0;
+        while(i<nums.length){
+            int c = nums[i]-1;
+            if(nums[i]!=nums[c]){
+                swap(nums , i , c);
+            }
+            else i++;
+        }
+        List<Integer> list = new ArrayList<>();
+        for(int j =0 ; j<nums.length ; j++){
+            if(nums[j]!=j+1)
+                list.add(nums[j]);
+        }
+        return list;
+    }
+    void swap(int[] arr ,int i , int j){
+        int t = arr[i];
+        arr[i] = arr[j];
+        arr[j] = t;
+    }
+}
